@@ -18,14 +18,23 @@ Proyecto base para el informe de Analisis y Diseno de Algoritmos. Implementa una
 └── CMakeLists.txt        # Compilacion con CMake
 ```
 
-## Compilar con Make
+## Requisitos
+
+- C++17 o superior.
+- macOS/Linux: `g++`, `clang++` o herramientas de compilacion equivalentes.
+- Windows: MinGW-w64, MSYS2 o CMake con un compilador C++.
+- La interfaz grafica incluida usa Cocoa, por eso funciona en macOS.
+
+## Ejecutar en macOS
+
+Version consola:
 
 ```bash
 make
 ./hospital
 ```
 
-## Ejecutar con interfaz grafica en macOS
+Interfaz grafica:
 
 ```bash
 make gui
@@ -38,14 +47,23 @@ Tambien puedes compilar y abrir en un solo paso:
 make open-gui
 ```
 
-## Compilar manualmente
+## Ejecutar en Linux
+
+Con Make:
+
+```bash
+make
+./hospital
+```
+
+Compilacion manual:
 
 ```bash
 g++ main.cpp src/*.cpp -Iinclude -o hospital -std=c++17
 ./hospital
 ```
 
-## Compilar con CMake
+Con CMake:
 
 ```bash
 cmake -S . -B build
@@ -53,4 +71,28 @@ cmake --build build
 ./build/hospital
 ```
 
-En Windows con MinGW, el ejecutable puede quedar como `hospital.exe`.
+## Ejecutar en Windows
+
+Con MinGW-w64 o MSYS2:
+
+```bash
+g++ main.cpp src/*.cpp -Iinclude -o hospital.exe -std=c++17
+hospital.exe
+```
+
+Si usas PowerShell y estas en la carpeta del proyecto:
+
+```powershell
+g++ main.cpp src/*.cpp -Iinclude -o hospital.exe -std=c++17
+.\hospital.exe
+```
+
+Con CMake:
+
+```powershell
+cmake -S . -B build
+cmake --build build
+.\build\Debug\hospital.exe
+```
+
+Si CMake genera el ejecutable en otra carpeta, revisa dentro de `build`.
