@@ -1,3 +1,5 @@
+![Interfaz grafica del sistema hospitalario](interfaz.png)
+
 # Sistema Hospitalario ADA en C++
 
 Proyecto base para el informe de Analisis y Diseno de Algoritmos. Implementa una cola de prioridad para pacientes, historial medico con hash table, ordenamientos QuickSort/MergeSort, asignacion voraz de medicos y benchmarking simple.
