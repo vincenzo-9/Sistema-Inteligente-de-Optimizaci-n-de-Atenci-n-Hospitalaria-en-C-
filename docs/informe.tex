@@ -1,0 +1,63 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[spanish,provide=*]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\geometry{left=3cm,right=2.5cm,top=3cm,bottom=2.5cm}
+\onehalfspacing
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=black}
+
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\small,
+  frame=single,
+  breaklines=true,
+  numbers=left
+}
+
+\begin{document}
+
+\title{Sistema Hospitalario Inteligente en C++}
+\author{Proyecto ADA}
+\date{2025}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Resumen}
+
+El proyecto implementa un sistema inteligente de atencion hospitalaria en C++,
+aplicando estructuras de datos y algoritmos estudiados en ADA: colas de prioridad,
+tablas hash, ordenamiento, busqueda binaria, algoritmos voraces y benchmarking.
+
+\section{Estructura del Codigo}
+
+\begin{itemize}
+  \item \texttt{main.cpp}: menu principal.
+  \item \texttt{include/Paciente.h}: estructura de paciente y comparador.
+  \item \texttt{include/Hospital.h}: clase principal del sistema.
+  \item \texttt{src/Algoritmos.cpp}: QuickSort, MergeSort y busqueda binaria.
+  \item \texttt{src/HistorialMedico.cpp}: historial medico con hash table.
+  \item \texttt{src/GestorMedicos.cpp}: asignacion greedy de medicos.
+  \item \texttt{src/Benchmark.cpp}: medicion empirica de tiempos.
+\end{itemize}
+
+\section{Compilacion}
+
+\begin{lstlisting}
+g++ main.cpp src/*.cpp -Iinclude -o hospital -std=c++17
+./hospital
+\end{lstlisting}
+
+\section{Conclusiones}
+
+La seleccion adecuada de estructuras y algoritmos mejora la eficiencia del sistema:
+la cola de prioridad gestiona emergencias en $O(\log n)$, el historial usa busqueda
+promedio $O(1)$ y los ordenamientos eficientes trabajan en $O(n \log n)$.
+
+\end{document}

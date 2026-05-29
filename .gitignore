@@ -1,0 +1,11 @@
+build/
+.venv/
+hospital
+hospital_gui
+hospital.exe
+*.o
+*.obj
+*.exe
+*.out
+*.log
+.DS_Store
